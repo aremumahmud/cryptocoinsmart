@@ -1,0 +1,413 @@
+
+   <html class="dark">
+     
+    <head>
+        <meta charset="utf-8">
+        <title>Cryptocoinsmart - Logistics Company Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
+    
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+    
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/style2.css" rel="stylesheet">
+        </style>
+    </head>
+    
+       <body>
+           <div class="body dark" id="body">
+            <div class="container-fluid bg-dark head_info">
+                <div class="row py-2 px-lg-5">
+                    <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                        <div class="d-inline-flex align-items-center text-white">
+                            <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                            <small class="px-3">|</small>
+                            <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-white pl-2" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-0">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5 dark">
+                    <a href="index.html" class="navbar-brand ml-lg-3 dark">
+                        <h1 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-truck mr-2"></i><i>Cryptocoinsmart</i></h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                        <div class="navbar-nav m-auto py-0">
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href=<%='/pages/dashboard/' + data._id%> class="nav-item nav-link">Dashboard</a>
+                           
+                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        </div>
+                        <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Get A Quote</a>
+                    </div>
+                </nav>
+            </div>
+    
+    
+            <div class="container-fluid  center sp">
+                 <div class="user_info_bar">
+                     <div class="avatar"></div>
+                     <div class="info">
+                         <h4>Gabriel jesus</h4>
+                         <p>---@Gabjes246</p>
+                     </div>
+                 </div>
+                 
+                   
+              
+                <!-- <h4 class="txt-cent">active shipments</h4> -->
+                <div class="full">
+                    <div class="part-Wrap" id="one">
+                    <div class="shipment_wrap">
+                        <div class="kk">
+                            <img class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
+                        <img id="right" class="set_img" src="/img/arrow-alt-circle-right.svg" alt="">
+                        </div>
+                        
+                        <div class="shipment_card"> 
+                            <!-- <p class="avail_slot">+</p> -->
+                            <div class="left_flank">
+                                <div class="card_title">
+                                <p><b> funding wallet balance</b></p>
+                            </div>
+                            <div class="balance">
+                                <h2>$<%= data.currentBalance%></h2>
+                                <p>~$<%= data.currentBalance*1.123 %></p>
+                            </div>
+                            </div>
+                            <div class="menu">
+                                <img class="set_img" src="/img/clock.svg" alt="">
+                            </div>
+                            
+                            <!-- <p class="see_more">see more ></p> -->
+                        </div>
+                    </div>
+                    <div class="icon-wrap">
+                        <img  src="/img/wrench.svg" alt=""> 
+                        <h3 style="text-align: center;" class="icon_word"> Available plans</h3>
+                    </div>
+                   
+                    <br><br>
+                    <div class="settings">
+                        <div class="settings_card">
+                            <img class="set_img" src="/img/dice-one.svg" alt="">
+                            <div class="set_text">
+                                <h3>Starter plan</h3>
+                                <small>speed : 0.2usdt / day</small>
+                            </div>
+                         
+                            <div>
+                                <img id="starter" class="set_img"  src="/img/eye.svg" alt="jf">
+                            </div>
+                        </div>
+                        <div class="settings_card">
+                            <img class="set_img" src="/img/dice-two.svg" alt="">
+                            <div class="set_text">
+                                <h3>Mini plan </h3>
+                                <small>speed : 0.7usdt / day</small>
+                            </div>
+                            <div></div><div></div> <div></div><div></div> <div></div><div></div>
+                            <div>
+                                <img id="mini" class="set_img"  src="/img/eye.svg" alt="jf">
+                            </div>
+                        </div>
+                        <div class="settings_card">
+                            <img class="set_img" src="/img/dice-three.svg" alt="">
+                            <div class="set_text">
+                                <h3>Standard plan</h3>
+                                <small>speed : 2usdt / day </small>
+                            </div>
+                            <div></div><div></div> <div></div><div></div> <div></div><div></div>
+                            <div>
+                                <img id="standard" class="set_img"  src="/img/eye.svg" alt="jf">
+                            </div>
+                        </div>
+                        <div class="settings_card">
+                            <img class="set_img" src="/img/dice-four.svg" alt="">
+                            <div class="set_text">
+                                <h3>Jumbo plan</h3>
+                                <small>speed : 20usdt / day</small>
+                            </div>
+                            <div></div><div></div> <div></div><div></div> <div></div><div></div>
+                            <div>
+                                <img id="jumbo" class="set_img"  src="/img/eye.svg" alt="jf">
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+               <div class="part1-Wrap disp" id="two">
+                <div class="kk">
+                    <img id="left" class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
+                <img  class="set_img" src="/img/arrow-alt-circle-right.svg" alt=""></div>
+                <h3 style="text-align: center;">Active plans</h3><br><br>
+                 <div class="settings">
+                        <% if (data.currentPlans.length == 0){ %>
+                        <br><br><br> <br><br><br> <br><br><br>
+                        <h3>You have no plans yet</h3>
+                        <% } else{%>
+                            <% data.currentPlans.forEach(function(plan){%>
+                                <div class="shipment_wrap">
+                                    <div class="shipment_card"> 
+                                        <!-- <p class="avail_slot">+</p> -->
+                                        <div class="left_flank">
+                                            <div class="card_title">
+                                            <p><b> <%= plan.name%> wallet balance</b></p>
+                                        </div>
+                                        <div class="balance">
+                                            <h2>$<%= plan.balance%></h2>
+                                            <p>~$<%= plan.balance*1.123 %></p>
+                                        </div>
+                                        </div>
+                                        <div class="menu">
+                                            <img class="set_img" src="/img/clock.svg" alt="">
+                                        </div>
+                                        
+                                        <!-- <p class="see_more">see more ></p> -->
+                                    </div>
+                                </div>
+                            <% }) %>
+                        <%}%>
+                    </div>
+               </div>
+                </div>
+                 
+               </div>
+       
+                 
+                 
+    
+    
+    
+    
+    <br><br><br><br>
+            <!--   footer start-->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-7 col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <h3 class="text-primary mb-4">Get In Touch</h3>
+                                                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <div class="d-flex justify-content-start mt-4">    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>                    <div class="col-md-6 mb-5">
+                        <h3 class="text-primary mb-4">Quick Links</h3>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>   <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+    </div>
+                        
+                  <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 	Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li> 
+                     <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div> <input id="hid" type="hidden" value=<%=data._id %> >
+    </div>
+    </div></div>
+           </div><br><br><br>
+           <div class="content" id="content">
+              
+           </div>
+  </body>
+  </html>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+     const el = e=>document.getElementById(e) 
+    el('starter').onclick = function(){
+       // el('topt').click()
+        el('body').style.filter = 'blur(5px)'
+        el('content').style.display = 'flex'
+       el('content').innerHTML =   ` <div class="settings_select_card">
+        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
+                <div class="set_text">
+                ,xlk,xm ,.,;.
+                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
+                  
+                  <input type="hidden" name='plan' value='starter' >
+                </div><br>
+                <div>
+                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                </div></form>
+            </div>`
+            el('cancel').onclick =function(e){
+                e.preventDefault()
+                console.log('jj')
+                el('body').style.filter = 'none'
+        el('content').style.display = 'none'
+            }
+            el('change').onclick =function(e){
+                el('form').submit()
+                console.log('jj')
+            }
+     }
+     el('mini').onclick = function(){
+       // el('topt').click()
+        el('body').style.filter = 'blur(5px)'
+        el('content').style.display = 'flex'
+       el('content').innerHTML =   ` <div class="settings_select_card">
+        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
+                <div class="set_text">
+                ,xlk,xm ,.,;.
+                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
+                  
+                  <input type="hidden" name='plan' value='mini' >
+                </div><br>
+                <div>
+                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                </div></form>
+            </div>`
+            el('cancel').onclick =function(e){
+                e.preventDefault()
+                console.log('jj')
+                el('body').style.filter = 'none'
+        el('content').style.display = 'none'
+            }
+            el('change').onclick =function(e){
+                el('form').submit()
+                console.log('jj')
+            }
+     }
+     el('jumbo').onclick = function(){
+       // el('topt').click()
+        el('body').style.filter = 'blur(5px)'
+        el('content').style.display = 'flex'
+       el('content').innerHTML =   ` <div class="settings_select_card">
+        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
+                <div class="set_text">
+                ,xlk,xm ,.,;.
+                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
+                  
+                  <input type="hidden" name='plan' value='jumbo' >
+                </div><br>
+                <div>
+                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                </div></form>
+            </div>`
+            el('cancel').onclick =function(e){
+                e.preventDefault()
+                console.log('jj')
+                el('body').style.filter = 'none'
+        el('content').style.display = 'none'
+            }
+            el('change').onclick =function(e){
+                el('form').submit()
+                console.log('jj')
+            }
+     }
+     el('standard').onclick = function(){
+       // el('topt').click()
+        el('body').style.filter = 'blur(5px)'
+        el('content').style.display = 'flex'
+       el('content').innerHTML =   ` <div class="settings_select_card">
+        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
+                <div class="set_text">
+                ,xlk,xm ,.,;.
+                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
+                  
+                  <input type="hidden" name='plan' value='standard' >
+                </div><br>
+                <div>
+                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                </div></form>
+            </div>`
+            el('cancel').onclick =function(e){
+                e.preventDefault()
+                console.log('jj')
+                el('body').style.filter = 'none'
+        el('content').style.display = 'none'
+            }
+            el('change').onclick =function(e){
+                el('form').submit()
+                console.log('jj')
+            }
+     }
+
+     el('left').onclick = function(){
+         el('two').style.display = 'none'
+         el('one').style.display = 'block'
+     }
+     el('right').onclick = function(){
+         el('two').style.display = 'block'
+         el('one').style.display = 'none'
+     }
+</script>
