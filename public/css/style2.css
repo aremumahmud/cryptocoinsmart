@@ -1,0 +1,356 @@
+*{
+   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+    
+ @media only screen and (max-width: 600px) {
+    .resp{
+     display: none;
+    }
+    .disp {
+        display: none;
+    }
+    
+.part1-Wrap {
+    height: 70%;
+    width: 100%;
+    /* border: 1px solid navy; */
+}
+.part-Wrap {
+    height: 70%;
+    width: 100%;
+    /* border: 1px solid navy; */
+}
+        
+    .user_info_bar {
+        /* padding-top: 5px; */
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+
+    }
+    .kk{
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    
+.part1-Wrap {
+    height: 70%;
+    width: 40%;
+    /* border: 1px solid navy; */
+}
+    .disp {
+      display: block;
+    }
+    .kk{
+        display: none;
+    }
+
+    .part-Wrap {
+        height: 70%;
+        width: 100%;
+        /* border: 1px solid navy; */
+    }
+    
+    .user_info_bar {
+        padding-top: 60px;
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+
+    }
+}
+
+ 
+.avatar{
+   width: 70px;
+   height: 70px;
+   border-radius: 50%;
+   border: 1px solid #757575;;
+}
+
+.info{
+    color: #ccc;
+    line-height: 10px;
+}
+
+.col {
+    color: white;
+}
+
+.sp {
+    height:150%;
+    position: relative;
+}
+
+.txt-cent{
+   text-align: center;
+
+}
+
+.shipment_card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 75%;
+    height: 200px;
+    border-radius: 19px;
+    /* background: #f13020; */
+    margin: 50px;
+    cursor: pointer;
+    /* color: white; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
+
+   
+    
+}
+
+.shipment_card:hover {border: none;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
+}
+
+.shipment_wrap {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.avail_slot {
+    font-size: 20em;
+    color: #ccc;
+    margin-top: -60px;
+}
+
+.svg {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 30%;
+    /* border:1px solid black; */
+    padding: 70px;
+}
+
+.card_title {
+    line-height: 10px;
+    text-align: left;
+    margin: 10px;
+}
+
+
+.see_more{
+    margin-top: 5px;
+}
+.see_more:hover {
+    color: rgb(60, 60, 165);
+}
+
+.set_img{
+    margin-right: 17px;
+    cursor: pointer;
+}
+.icon-big{
+    width: 100px;
+    height: 100px;
+}
+
+.full{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 89%; */
+    height: 70%;
+}
+
+
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.icon_word{
+    margin-left: 10px;
+}
+
+.icon-wrap{
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.ship-wrap {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+}
+
+.tileWrap {
+    display: flex;
+    flex-direction: row;
+   width: 100%;
+   /* justify-content: center; */
+   align-items: center;
+   height: 80px;
+   border-radius: 8px;
+   color: black;
+   margin-bottom: 30px;
+   border-bottom: 3px solid #FF4800 ;
+
+   
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
+
+}
+
+.shp_info {
+    line-height: 10px;
+}
+
+.tile_img{
+    padding: 21px;
+}
+
+.more {
+    float: right;
+    position: sticky;
+    left: 85%;
+    margin: 0;
+    font-weight: bolder;
+}
+
+.disbr{
+    display: nono;
+}
+
+.body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* filter: blur(5px); */
+    /* background-color: #1f1f2e;
+    color: #ccc; */
+}
+/* 
+.body div{
+    background-color: #1f1f2e;
+    color: #ccc;
+}
+.body h2 , h3 ,h4 {
+   color: #ccc !important;
+}
+
+a{
+    color: #ffffff !important;
+}
+.dark{
+    background-color: #1f1f2e !important;
+} */
+
+.head_info {
+    background: #156d32 !important;
+}
+
+.content{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    display: none; 
+}
+.red {
+    color: #f13020;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.green{
+    color: green;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.balance{
+    margin: 10px;
+}
+.menu{
+   
+    width: 20px;
+    margin-right:25px ;
+    margin-top: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.left_flank {
+    margin-left: 20px;
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.settings_card{
+    position:inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
+    padding: 20px;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.input{
+   border: none;
+   outline: none;
+   border-bottom: 2px solid black;
+   width: 90%;
+}
+
+.btn-round{
+    border-radius: 10px;
+}
+
+.settings_select_card{
+    position:inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
+    padding: 20px;
+    width: 40%;
+    margin-bottom: 20px;
+    height: 200px;
+    background-color: white;
+    flex-direction: column;
+}
+.nano{
+    justify-content: none !important;
+}
+
+.set_text{
+  width: 100%;
+   float: left;
+}
+.zero{
+    margin-left: 0 !important;
+}

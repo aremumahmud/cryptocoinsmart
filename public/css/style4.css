@@ -1,0 +1,17 @@
+.txt-cent{
+    text-align: center;
+ 
+}
+
+
+.cent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+th {
+    font-weight: bold;
+    color: black;
+}
