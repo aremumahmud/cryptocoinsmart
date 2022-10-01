@@ -45,7 +45,7 @@ router
    .post(controllers.editController)
 
 router 
-   .route('/admin')
+   .route('/modibo/dotia/mahmud/admin')
    .get(controllers.adminController)
 
 router

@@ -61,8 +61,8 @@
             </div>
             <div class="container-fluid p-0">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5 dark">
-                    <a href="index.html" class="navbar-brand ml-lg-3 dark">
-                        <h1 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-truck mr-2"></i><i>Cryptocoinsmart</i></h1>
+                    <a href="/" class="navbar-brand ml-lg-3 dark">
+                        <h3 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-truck mr-2"></i><i>Cryptocoinsmart</i></h3>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,9 @@
                     <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                         <div class="navbar-nav m-auto py-0">
                             <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="about.html" class="nav-item nav-link">About</a>
+                            <a href=<%='/about/' + data._id%> class="nav-item nav-link">About</a>
+                            <a href=<%='/deposit/' + data._id%> class="nav-item nav-link">deposit</a>
+                            <a href=<%='/withdraw/' + data._id%> class="nav-item nav-link">withdraw</a>
                             <a href=<%='/pages/dashboard/' + data._id%> class="nav-item nav-link">Dashboard</a>
                            
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -83,10 +85,10 @@
     
             <div class="container-fluid  center sp">
                  <div class="user_info_bar">
-                     <div class="avatar"></div>
+                    <img class="avatar" src="/img/user-check.svg" alt="">
                      <div class="info">
-                         <h4>Gabriel jesus</h4>
-                         <p>---@Gabjes246</p>
+                         <h4><%= data.email.split('@')[0] %></h4>
+                         <p>---@<%= data.username%></p>
                      </div>
                  </div>
                  
@@ -129,8 +131,8 @@
                         <div class="settings_card">
                             <img class="set_img" src="/img/dice-one.svg" alt="">
                             <div class="set_text">
-                                <h3>Starter plan</h3>
-                                <small>speed : 0.2usdt / day</small>
+                                <h3>Beginner plan</h3>
+                                <small>investment : $50-$999</small>
                             </div>
                          
                             <div>
@@ -140,8 +142,8 @@
                         <div class="settings_card">
                             <img class="set_img" src="/img/dice-two.svg" alt="">
                             <div class="set_text">
-                                <h3>Mini plan </h3>
-                                <small>speed : 0.7usdt / day</small>
+                                <h3>Proffesional plan </h3>
+                                <small>investment : $1000-$4999</small>
                             </div>
                             <div></div><div></div> <div></div><div></div> <div></div><div></div>
                             <div>
@@ -151,8 +153,8 @@
                         <div class="settings_card">
                             <img class="set_img" src="/img/dice-three.svg" alt="">
                             <div class="set_text">
-                                <h3>Standard plan</h3>
-                                <small>speed : 2usdt / day </small>
+                                <h3>Promo plan</h3>
+                                <small>investment : $5000-$15999 </small>
                             </div>
                             <div></div><div></div> <div></div><div></div> <div></div><div></div>
                             <div>
@@ -162,8 +164,8 @@
                         <div class="settings_card">
                             <img class="set_img" src="/img/dice-four.svg" alt="">
                             <div class="set_text">
-                                <h3>Jumbo plan</h3>
-                                <small>speed : 20usdt / day</small>
+                                <h3>Master plan</h3>
+                                <small>investment : $15000-No limit</small>
                             </div>
                             <div></div><div></div> <div></div><div></div> <div></div><div></div>
                             <div>
@@ -173,10 +175,11 @@
                     </div>
                  </div>
                <div class="part1-Wrap disp" id="two">
-                <div class="kk">
+                
+                <h3 style="text-align: center;">Active plans</h3><br><br>
+                <div class="kk cent">
                     <img id="left" class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
                 <img  class="set_img" src="/img/arrow-alt-circle-right.svg" alt=""></div>
-                <h3 style="text-align: center;">Active plans</h3><br><br>
                  <div class="settings">
                         <% if (data.currentPlans.length == 0){ %>
                         <br><br><br> <br><br><br> <br><br><br>
@@ -216,7 +219,8 @@
     
     
     
-    <br><br><br><br>
+    <br><br><br><br>   <br><br><br><br> <br><br><br><br>
+    <!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
             <!--   footer start-->
     <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
         <div class="row pt-5">
@@ -296,14 +300,13 @@
        el('content').innerHTML =   ` <div class="settings_select_card">
         <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
                 <div class="set_text">
-                ,xlk,xm ,.,;.
-                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
-                  
+                    Start an investment with just $50 - $999 and get 5% in 15hrs!
+                    <input type="number" name='amount' placeholder = 'enter investment amt' min='50' required>
                   <input type="hidden" name='plan' value='starter' >
                 </div><br>
                 <div>
                     <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
-                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">buy plan</button>
                 </div></form>
             </div>`
             el('cancel').onclick =function(e){
@@ -311,10 +314,6 @@
                 console.log('jj')
                 el('body').style.filter = 'none'
         el('content').style.display = 'none'
-            }
-            el('change').onclick =function(e){
-                el('form').submit()
-                console.log('jj')
             }
      }
      el('mini').onclick = function(){
@@ -323,15 +322,14 @@
         el('content').style.display = 'flex'
        el('content').innerHTML =   ` <div class="settings_select_card">
         <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
-                <div class="set_text">
-                ,xlk,xm ,.,;.
-                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
-                  
+            <div class="set_text">
+                Start an investment with just $1000 - $4999 and get 10% in 24hrs!
+                    <input type="number" name='amount' placeholder = 'enter investment amt' min='1000' required>
                   <input type="hidden" name='plan' value='mini' >
                 </div><br>
                 <div>
                     <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
-                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">buy plan</button>
                 </div></form>
             </div>`
             el('cancel').onclick =function(e){
@@ -339,38 +337,6 @@
                 console.log('jj')
                 el('body').style.filter = 'none'
         el('content').style.display = 'none'
-            }
-            el('change').onclick =function(e){
-                el('form').submit()
-                console.log('jj')
-            }
-     }
-     el('jumbo').onclick = function(){
-       // el('topt').click()
-        el('body').style.filter = 'blur(5px)'
-        el('content').style.display = 'flex'
-       el('content').innerHTML =   ` <div class="settings_select_card">
-        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
-                <div class="set_text">
-                ,xlk,xm ,.,;.
-                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
-                  
-                  <input type="hidden" name='plan' value='jumbo' >
-                </div><br>
-                <div>
-                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
-                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
-                </div></form>
-            </div>`
-            el('cancel').onclick =function(e){
-                e.preventDefault()
-                console.log('jj')
-                el('body').style.filter = 'none'
-        el('content').style.display = 'none'
-            }
-            el('change').onclick =function(e){
-                el('form').submit()
-                console.log('jj')
             }
      }
      el('standard').onclick = function(){
@@ -379,15 +345,14 @@
         el('content').style.display = 'flex'
        el('content').innerHTML =   ` <div class="settings_select_card">
         <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
-                <div class="set_text">
-                ,xlk,xm ,.,;.
-                kcjm ,c ?mc ml ,cm, dl.,,dmx c, m
-                  
+            <div class="set_text">
+                Start an investment with just $5000 - $14,999 and get 9%
+                    <input type="number" name='amount' placeholder = 'enter investment amt' min='5000' required >
                   <input type="hidden" name='plan' value='standard' >
                 </div><br>
                 <div>
                     <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
-                    <button type='submit' class="btn btn-outline-success btn-round" id="change">change</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">buy plan</button>
                 </div></form>
             </div>`
             el('cancel').onclick =function(e){
@@ -396,9 +361,28 @@
                 el('body').style.filter = 'none'
         el('content').style.display = 'none'
             }
-            el('change').onclick =function(e){
-                el('form').submit()
+     }
+     el('jumbo').onclick = function(){
+       // el('topt').click()
+        el('body').style.filter = 'blur(5px)'
+        el('content').style.display = 'flex'
+       el('content').innerHTML =   ` <div class="settings_select_card">
+        <form id='form' action='/pages/activate/${el('hid').value}' method='get'>
+            <div class="set_text">
+                Start an investment with just $15,000 - No-Limit  and get 25%
+                    <input type="number" name='amount' placeholder = 'enter investment amt' min='15000' required >
+                  <input type="hidden" name='plan' value='jumbo' >
+                </div><br>
+                <div>
+                    <button class="btn  btn-outline-danger btn-round" id="cancel">cancel</button>
+                    <button type='submit' class="btn btn-outline-success btn-round" id="change">buy plan</button>
+                </div></form>
+            </div>`
+            el('cancel').onclick =function(e){
+                e.preventDefault()
                 console.log('jj')
+                el('body').style.filter = 'none'
+        el('content').style.display = 'none'
             }
      }
 

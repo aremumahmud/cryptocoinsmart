@@ -8,6 +8,6 @@ module.exports = function(req , res){
     dbs.registerUser(username , email , password).then(resp=>{
         res.render('regSuccess')
     }).catch(err=>{
-         res.redirect('/register/?pass=false')
+        res.redirect('/register/?pass=false')
     })
 }

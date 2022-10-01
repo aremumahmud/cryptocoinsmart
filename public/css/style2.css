@@ -13,6 +13,7 @@
 .part1-Wrap {
     height: 70%;
     width: 100%;
+    
     /* border: 1px solid navy; */
 }
 .part-Wrap {
@@ -31,9 +32,78 @@
     .kk{
         display: block;
     }
+
+    .shipment_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 170px;
+        margin-bottom: 50px;
+        margin-top: 10px;
+        border-radius: 19px;
+        /* background: #f13020; */
+        cursor: pointer;
+        /* color: white; */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
+    
+       
+        
+    }
+    .settings_card{
+        position:inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
+        padding: 15px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .set_img{
+        margin-right: 17px;
+        cursor: pointer;
+        width: 22px;
+        height: 22px;
+    }
+    
 }
 
 @media only screen and (min-width: 600px) {
+    .set_img{
+        margin-right: 17px;
+        cursor: pointer;
+    }
+    .settings_card{
+        position:inherit;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
+        padding: 20px;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+    
+    .shipment_card {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 75%;
+        height: 200px;
+        border-radius: 19px;
+        /* background: #f13020; */
+        margin: 50px;
+        cursor: pointer;
+        /* color: white; */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
+        
+    }
+    
     
 .part1-Wrap {
     height: 70%;
@@ -64,10 +134,11 @@
 
  
 .avatar{
-   width: 70px;
-   height: 70px;
+   width: 50px;
+   height: 50px;
    border-radius: 50%;
-   border: 1px solid #757575;;
+   border: 1px solid #757575;
+   background-color: black;
 }
 
 .info{
@@ -89,24 +160,13 @@
 
 }
 
-.shipment_card {
+.cent{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 75%;
-    height: 200px;
-    border-radius: 19px;
-    /* background: #f13020; */
-    margin: 50px;
-    cursor: pointer;
-    /* color: white; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
-
-   
-    
+    margin-bottom: 10px;
 }
-
 .shipment_card:hover {border: none;
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.315), 0 6px 20px 0 rgba(0, 0, 0, 0.267);
@@ -152,10 +212,7 @@
     color: rgb(60, 60, 165);
 }
 
-.set_img{
-    margin-right: 17px;
-    cursor: pointer;
-}
+
 .icon-big{
     width: 100px;
     height: 100px;
@@ -304,19 +361,9 @@ a{
     align-items: center;
     justify-content: center;
     width: 100%;
+    overflow: auto;
 }
 
-.settings_card{
-    position:inherit;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 10px;
-    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
-    padding: 20px;
-    width: 80%;
-    margin-bottom: 20px;
-}
 
 .input{
    border: none;
@@ -336,8 +383,8 @@ a{
     justify-content: center;
     border-radius: 10px;
     box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.315), 0 7px 19px 0 rgba(0, 0, 0, 0.267);
-    padding: 20px;
-    width: 40%;
+    padding: 30px;
+    width: 60%;
     margin-bottom: 20px;
     height: 200px;
     background-color: white;

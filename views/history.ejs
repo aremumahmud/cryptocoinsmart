@@ -62,7 +62,7 @@
             <div class="container-fluid p-0">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5 dark">
                     <a href="index.html" class="navbar-brand ml-lg-3 dark">
-                        <h1 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-bitcoin mr-2"></i><i>Cryptocoinsmart</i></h1>
+                        <h3 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-bitcoin mr-2"></i><i>Cryptocoinsmart</i></h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -70,7 +70,9 @@
                     <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                         <div class="navbar-nav m-auto py-0">
                             <a href="/" class="nav-item nav-link active">Home</a>
-                            <a href="/about" class="nav-item nav-link">About</a>
+                            <a href=<%='/about/' + data._id%> class="nav-item nav-link">About</a>
+                            <a href=<%='/deposit/' + data._id%> class="nav-item nav-link">deposit</a>
+                            <a href=<%='/withdraw/' + data._id%> class="nav-item nav-link">withdraw</a>
                             <a href=<%='/pages/dashboard/' + data._id%> class="nav-item nav-link">dashboard</a>
                         
                             <a href="/contact" class="nav-item nav-link">Contact</a>
@@ -85,18 +87,19 @@
                  <div class="user_info_bar">
                      <div class="avatar"></div>
                      <div class="info">
-                         <h4><%= data.email %></h4>
+                        <h4><%= data.email.split('@')[0] %></h4>
                          <p>---@<%= data.username%></p>
                      </div>
                  </div>
                 <!-- <h4 class="txt-cent">active shipments</h4> -->
                 <div class="full">
                     <div class="part-Wrap" id="one">
-                        <div class="kk">
+                       
+                        <h3 style="text-align: center;">Withdrawal Records</h3><br><br>
+                        <div class="kk cent">
                             <img class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
                         <img id="right" class="set_img" src="/img/arrow-alt-circle-right.svg" alt="">
                         </div>
-                        <h3 style="text-align: center;">Withdrawal Records</h3><br><br>
                         <div class="settings">
                             <% let dn =  data.withdrawalRecords %>
                             <% if(dn!=''){ %>
@@ -125,10 +128,11 @@
                            </div>
                  </div>
                <div class="part1-Wrap disp" id="two">
-                <div class="kk">
+                
+                <h3 style="text-align: center;">Deposit Records</h3><br><br>
+                <div class="kk cent">
                     <img id="left" class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
                 <img  class="set_img" src="/img/arrow-alt-circle-right.svg" alt=""></div>
-                <h3 style="text-align: center;">Deposit Records</h3><br><br>
                  <div class="settings">
                      <% let d =  data.depositRecords %>
                      <% if(d!=''){ %>

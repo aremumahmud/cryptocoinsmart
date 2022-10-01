@@ -86,7 +86,7 @@
         <div class="container-fluid p-0">
             <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5">
                 <a href="index.html" class="navbar-brand ml-lg-3">
-                    <h1 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-bitcoin mr-2"></i>Cryptocoinsmart</h1>
+                    <h3 class="m-0 display-5 text-uppercase text-primary"><i class="fa fa-bitcoin mr-2"></i>Cryptocoinsmart</h3>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -94,7 +94,12 @@
                 <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                     <div class="navbar-nav m-auto py-0">
                         <a href="/" class="nav-item nav-link active">Home</a>
-                        <a href="about.html" class="nav-item nav-link">About</a>
+                        
+                        <a href=<%='/about/' + data._id%> class="nav-item nav-link">About</a>
+                       
+                        <a href=<%='/pages/dashboard/' + data._id%> class="nav-item nav-link">Dashboard</a>
+                        <a href=<%='/deposit/' + data._id%> class="nav-item nav-link">deposit</a>
+                            <a href=<%='/withdraw/' + data._id%> class="nav-item nav-link">withdraw</a>
                         <a href=<%='/pages/dashboard/' + data %> class="nav-item nav-link">Dashboard</a>
                        
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
@@ -107,11 +112,10 @@
 
         <div class="container-fluid  center sp">
             <br><br> <br><br>
-            <h3 class="txt-cent">Deposit funds</h3>
+           
             
             <div class="col-lg-5 ">
-                <h3></h3>
-             
+             <h3 class="txt-cent">Deposit funds</h3>
                            <div class="py-5 px-4 px-sm-5 ">
                             <% if(data2=='false'){%>
                                 <small style="color: red;">existing transaction!</small>

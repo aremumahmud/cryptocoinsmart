@@ -46,6 +46,9 @@ app.get('/viewn' , (req,res)=>{
     
 })
 
+app.get('/about/:id' ,(req,res)=>{
+    res.render('about' , {data : {_id:id}})
+})
 
 let port = process.argv[2] || process.env.PORT
 app.listen(port , (e)=>{

@@ -1,6 +1,6 @@
 module.exports = {
-    mini : {cost : 1, duration : 7 ,costPerDay : 2},
-    starter : {cost : 23, duration : 7, costPerDay : 2},
-    standard :{cost : 23, duration : 7,costPerDay : 2 },
-    jumbo : {cost : 23, duration : 7 ,costPerDay : 2},
+    mini : {percentage : 15, duration : 24 },
+    starter : {percentage : 10, duration : 15 },
+    standard :{percentage : 9, duration : 5 },
+    jumbo : {percentage : 25, duration : 72 }
 }

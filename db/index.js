@@ -109,7 +109,7 @@ db_controller.prototype.refreshMiddlware = function (req,res,next){
                     if(plans.length == 0) return next()
                     let count = 0
                     plans.forEach( plan=>{
-                        self.update(plan).then(res=>{
+                        self.update(plan ,found.email).then(res=>{
                             count++
 							console.log(res, count , plans.length)
                             if(count == plans.length){
@@ -125,7 +125,7 @@ db_controller.prototype.refreshMiddlware = function (req,res,next){
         })
 }
 
-db_controller.prototype.update = function(_id){
+db_controller.prototype.update = function(_id ,email){
 	console.log(_id)
 	return new Promise((res,rej)=>{
         PlansModel.findOne({_id} , (err,plan)=>{
@@ -133,30 +133,23 @@ db_controller.prototype.update = function(_id){
 				
 				rej(err)
 			}else{
-				let balance = 0
 				let dist = compare(plan.start)
-				if(dist > plan.duration){
-					balance =  plan.duration * plans[plan.name].costPerDay
-					plan.balance = balance
-					plan.ended = true
-					plan.save(err=>{
-						if(err){
-							rej(err)
-						}else{
-							res(plan)
-						}
-					})
-				  }else{
-					balance = dist *  plans[plan.name].costPerDay
+				if(dist > plan.duration || dist > plan.duration ){
 					
-					plan.balance = balance
-					plan.save(err=>{
-						if(err){
-							rej(err)
-						}else{
-							res(plan)
-						}
-					})
+					 User.findOne({email},(err,user)=>{
+						 if(err){
+							 rej(err)
+						 }else{
+							 user.currentBalance += plan.balance 
+							 user.save(err=>{
+								 if(err){
+									 rej()
+								 }else{res()}
+							 })
+						 }
+					 })
+				  }else{
+					res()
 				}
 			}
 		})
@@ -370,7 +363,7 @@ db_controller.prototype.getHistory = function (type){
    })
 }
 
-db_controller.prototype.activatePlans = function(plan , _id){
+db_controller.prototype.activatePlans = function(plan , _id , amount){
 	return new Promise((res,rej)=>{
 		console.log(_id)
 		User.findOne({_id} , (err ,found)=>{
@@ -381,10 +374,11 @@ db_controller.prototype.activatePlans = function(plan , _id){
 					err : 'couldnt find record'
 				})
 			}else{
-				
+				let percentage = plans[plan].percentage
+				let future_bal = amount + (amount*percentage)/100
 				let pland = new Plan({
 					name : plan,
-					balance : 0,
+					balance : future_bal,
 					start : new Date(),
 					duration : plans[plan].duration
 				})
@@ -404,7 +398,7 @@ db_controller.prototype.activatePlans = function(plan , _id){
 	})
 }
 
-db_controller.prototype.buyPlan = function(plan ,_id){
+db_controller.prototype.buyPlan = function(plan,amount ,_id){
 	return new Promise((res,rej)=>{
 		User.findOne({_id} , (err , found)=>{
 			if(err){
@@ -415,7 +409,7 @@ db_controller.prototype.buyPlan = function(plan ,_id){
                 rej(err)
 			}else{
 				let balance  = found.currentBalance
-				let withdraw_amount  = plans[plan].cost
+				let withdraw_amount  = amount
 				if(balance < withdraw_amount){
 					rej({
 						error : true,
@@ -423,7 +417,7 @@ db_controller.prototype.buyPlan = function(plan ,_id){
 					})
 				}else{
 					found.currentBalance = balance - withdraw_amount
-					this.activatePlans(plan , found._id).then(resp=>{
+					this.activatePlans(plan , found._id , amount).then(resp=>{
 						found.save(err=>{
 							if(err){
 								rej(err)
