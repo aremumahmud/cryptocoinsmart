@@ -4,10 +4,11 @@ const dbs = new db()
 
 
 module.exports = function(req , res){
-    let {username , email , password } = req.body
-    dbs.registerUser(username , email , password).then(resp=>{
+    let {username , email , password , referal} = req.body
+    dbs.registerUser(username , email , password , referal).then(resp=>{
         res.render('regSuccess')
     }).catch(err=>{
-        res.redirect('/register/?pass=false')
+      console.log(err)
+        res.redirect('/register/?pass=false&ref='+referal)
     })
 }

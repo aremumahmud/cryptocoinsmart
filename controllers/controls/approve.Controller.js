@@ -7,7 +7,7 @@ module.exports = function(req , res){
    // let { id } = req.params
     let {type , record_id , email} = req.query
     dbs.approveRecord(record_id , type , email).then(resp=>{
-        res.redirect('/pages/admin')
+        res.redirect('/pages/modibo/dotia/mahmud/admin')
     }).catch(err=>{
         res.send({
             sucess : false ,

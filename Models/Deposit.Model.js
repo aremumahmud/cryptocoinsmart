@@ -15,7 +15,8 @@ const UserSchema = mongoose.Schema({
     unique : true,
     required : true
   },
-  approved : Boolean
+  approved : Boolean,
+  coin : String
 })
 
 module.exports = mongoose.model( 'Deposit', UserSchema );

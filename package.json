@@ -1,0 +1,28 @@
+{
+  "name": "cryptocoinsmart",
+  "version": "1.0.0",
+  "description": "an investment app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aremumahmud/cryptocoinsmart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aremumahmud/cryptocoinsmart/issues"
+  },
+  "homepage": "https://github.com/aremumahmud/cryptocoinsmart#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jquery": "^3.6.1",
+    "mongoose": "^6.6.3",
+    "nodemailer": "^6.8.0"
+  }
+}

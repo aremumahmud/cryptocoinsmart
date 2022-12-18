@@ -21,7 +21,7 @@ app.get('/login' , (req,res)=>{
 })
 
 app.get('/register' , (req,res)=>{
-    res.render('register',{data:req.query.pass})
+    res.render('register',{data:req.query.pass, referal : req.query.ref})
 })
 
 app.get('/withdraw/:id' , (req,res)=>{
@@ -33,8 +33,8 @@ app.get('/deposit/:id' , (req,res)=>{
 })
 
 app.get('/view' , (req,res)=>{
-    let {hash , amount} = req.query
-    res.render('view' , {data:{hash , amount}})
+    let {hash , amount,coin} = req.query
+    res.render('view' , {data:{hash , amount,coin}})
 })
 
 app.get('/viewn' , (req,res)=>{
@@ -46,8 +46,9 @@ app.get('/viewn' , (req,res)=>{
     
 })
 
-app.get('/about/:id' ,(req,res)=>{
-    res.render('about' , {data : {_id:id}})
+app.get('/about' ,(req,res)=>{
+  
+    res.render('about')
 })
 
 let port = process.argv[2] || process.env.PORT

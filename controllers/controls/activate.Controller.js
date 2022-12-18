@@ -9,6 +9,6 @@ module.exports = function(req , res){
     dbs.buyPlan(plan , amount , id).then(resp=>{
         res.redirect('/pages/plans/' + id)
     }).catch(err=>{
-        res.render('insuff')
+        res.render('insuff' , {data :{ id}})
     })
 }

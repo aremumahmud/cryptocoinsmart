@@ -30,7 +30,17 @@ const UserSchema = mongoose.Schema({
     ref : 'Deposit'
   }],
   usdtAddress : String,
-  history : []
+  history : [],
+  referalsNo :[{
+    type : Schema.Types.ObjectId,
+    ref : 'ReferalUser'
+  }],
+  referalDeposits :[{
+    type : Schema.Types.ObjectId,
+    ref : 'Referal'
+  }],
+  referer : String
+
 })
 
 module.exports = mongoose.model( 'User', UserSchema );

@@ -1,0 +1,377 @@
+
+   <html class="dark">
+     
+    <head>
+        <meta charset="utf-8">
+        <title>Cryptocoinsmart - Referal</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free HTML Templates" name="keywords">
+        <meta content="Free HTML Templates" name="description">
+    
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+    
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+        <!-- Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/style2.css" rel="stylesheet">
+        </style>
+      <style>.goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }</style>
+    </head>
+    
+       <body>
+           <div id="body" class="body dark">
+            <div class="container-fluid bg-dark head_info" id="#top">
+                <div class="row py-2 px-lg-5">
+                    <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                        <div class="d-inline-flex align-items-center text-white">
+                            <small><i class="fa fa-phone-alt mr-2"></i>
+                      <a href='https://wa.me/+447464456003'>+44 7464 45 6003</a></small>
+                            <small class="px-3">|</small>
+                            <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-right">
+                        <div class="d-inline-flex align-items-center">
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-white px-2" href="">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="text-white pl-2" href="">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-0">
+                <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-lg-5 dark">
+                    <a href="index.html" class="navbar-brand ml-lg-3 dark">
+                        <h3 class="m-0 display-5 text-uppercase text-primary red"><i class="fa fa-bitcoin mr-2"></i><i>Cryptocoinsmart</i></h1>
+                    </a>
+                    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
+                        <div class="navbar-nav m-auto py-0">
+                            <a href="/" class="nav-item nav-link active">Home</a>
+                            <a href=<%='/about'%> class="nav-item nav-link">About</a>
+                            <a href=<%='/deposit/' + data._id%> class="nav-item nav-link">deposit</a>
+                            <a href=<%='/withdraw/' + data._id%> class="nav-item nav-link">withdraw</a>
+                            <a href=<%='/pages/dashboard/' + data._id%> class="nav-item nav-link">dashboard</a>
+                        
+                            <a href="/contact" class="nav-item nav-link">Contact</a>
+                          <div id="google_translate_element"></div>
+                        </div>
+                        <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Get A Quote</a>
+                    </div>
+                </nav>
+            </div>
+    
+    
+            <div class="container-fluid  center sp">
+                 <div class="user_info_bar">
+                     <div class="avatar"></div>
+                     <div class="info">
+                        <h4><%= data.email.split('@')[0] %></h4>
+                         <p>---@<%= data.username%></p>
+                     </div>
+                 </div>
+                <!-- <h4 class="txt-cent">active shipments</h4> -->
+                <h3 style="text-align: center;">referals</h3><br><br>
+                       <p style="text-align: center;">Refer family and friends to invest in this great investment platform and get 10% in all deposits made from them</p>
+                      <h3 style='text-align: center'>referal link </h3>
+                      <h4 style='text-align: center'><a href=<%= 'https://cryptocoinsmart.crypsc.repl.co/register/?ref=' + data.username  %> ><%= 'https://cryptocoinsmart.crypsc.repl.co/register/?ref=' + data.username  %></a></h4>
+                           
+                <div class="full">
+                    <div class="part-Wrap" id="one">
+                       
+                        <h3 style="text-align: center;">Referals</h3><br><br>
+                        <div class="kk cent">
+                            <img class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
+                        <img id="right" class="set_img" src="/img/arrow-alt-circle-right.svg" alt="">
+                        </div>
+                        <div class="settings">
+                            <% let dn =  data.referalsNo %>
+                            <% if(dn!='' || dn.length != 0){ %>
+                               <% dn.forEach(function(dt){ %>
+                                   <div class="settings_card nano">
+                                       <img class="set_img" src="/img/user.svg" alt="">
+                                       <div class="set_text zero">
+                                           <% let type = dt.transactionHash ; if(type == null){types = dt.user}else{types = dt.user}%>
+                                           <h3><%= '@'+types%></h3>
+                                           <% let dsp; let st = dt.approved; if(st){dsp = dt.time}else{dsp=dt.time}%>
+                                    <small>time : <%= dsp%></small>
+                                       </div>
+                                       <% if(types == 'Withdrawn to wallet'){ %>
+                                       <div class='green'> -<%= dt.amount%></div>
+                                       <%}else{ %>
+                                           <div class='green'> +<%= dt.amount%></div>
+                                       <%} %>
+                                   </div>
+                               <% }) %>
+                            <%}else{%>
+                               <br><br><br><br><br>
+                               <h4><%= 'no referal activity' %></h4>
+                               
+                            <%}%>
+                               
+                           </div>
+                 </div>
+               <div class="part1-Wrap disp" id="two">
+                
+                <h3 style="text-align: center;">Referal Deposit Records</h3><br><br>
+                <div class="kk cent">
+                    <img id="left" class="set_img" src="/img/arrow-alt-circle-left.svg" alt="">
+                <img  class="set_img" src="/img/arrow-alt-circle-right.svg" alt=""></div>
+                 <div class="settings">
+                     <% let d =  data.referalDeposits %>
+                     <% if(d!=''){ %>
+                        <% d.reverse().forEach(function(dt){ %>
+                            <div class="settings_card nano">
+                                <img class="set_img" src="/img/download.svg" alt="">
+                                <div class="set_text zero">
+                                    <% let type = dt.transactionHash ; if(type == null){types = 'New Referal Deposit'}else{types ='New Referal Deposit'}%>
+                                    <h3><%= types%></h3>
+                                    <% let dsp; let st = dt.approved; if(st){dsp = 'complete'}else{dsp='complete'}%>
+                                    <small>referal : @<%= dt.user%></small>
+                                </div>
+                                <% if(types == 'Withdrawn to wallet'){ %>
+                                <div class='red'> -<%= dt.amount%></div>
+                                <%}else{ %>
+                                    <div class='green'> +<%= dt.amount%></div>
+                                <%} %>
+                            </div>
+                        <% }) %>
+                     <%}else{%>
+                        <br><br><br><br><br>
+                        <h4><%= 'no referal deposit activity' %></h4>
+                        
+                     <%}%>
+                        
+                    </div>
+               </div>
+                </div>
+                 <a href="#top" id="topt"></a>
+               <!-- <div class="disp">
+                   <h4 class="txt-cent">Shipments</h4>
+                   <br>
+                   <div class="ship-wrap">
+                       <div class="tileWrap">
+                           <img class="tile_img" src="img/package.svg" alt="">
+                           <div class="shp_info">
+                               <p>Tracking id : bghuujhjh...</p>
+                               <small><i>status : in transit</i></small>
+                           </div>
+                           <p class="more">></p>
+                       </div> 
+                       <div class="tileWrap">
+                        <img class="tile_img" src="img/package.svg" alt="">
+                        <div class="shp_info">
+                            <p>Tracking id : bghuujhjh...</p>
+                            <small><i>status : in transit</i></small>
+                        </div>
+                        <p class="more">></p>
+                    </div>
+                    <div class="tileWrap">
+                        <img class="tile_img" src="img/package.svg" alt="">
+                        <div class="shp_info">
+                            <p>Tracking id : bghuujhjh...</p>
+                            <small><i>status : in transit</i></small>
+                        </div>
+                        <p class="more">></p>
+                    </div><div class="tileWrap">
+                        <img class="tile_img" src="img/package.svg" alt="">
+                        <div class="shp_info">
+                            <p>Tracking id : bghuujhjh...</p>
+                            <small><i>status : in transit</i></small>
+                        </div> <p class="more">></p>
+                    </div><div class="tileWrap">
+                        <img class="tile_img" src="img/package.svg" alt="">
+                        <div class="shp_info">
+                            <p>Tracking id : bghuujhjh...</p>
+                            <small><i>status : in transit</i></small>
+                        </div> <p class="more">></p>
+                    </div><div class="tileWrap">
+                        <img class="tile_img" src="img/package.svg" alt="">
+                        <div class="shp_info">
+                            <p>Tracking id : bghuujhjh...</p>
+                            <small><i>status : in transit</i></small>
+                        </div> <p class="more">></p>
+                    </div>
+                       <hr>
+                   </div>
+               </div> -->
+               </div>
+       
+                 
+                 
+    
+    
+    
+    
+            <!--   footer start-->
+    <div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-7 col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <h3 class="text-primary mb-4">Get In Touch</h3>
+                                                <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <div class="d-flex justify-content-start mt-4">    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                                                    <a class="btn btn-outline-light btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>                   
+<!--                   <div class="col-md-6 mb-5">
+                        <h3 class="text-primary mb-4">Quick Links</h3>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>     <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>   <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Pricing Plan</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div> -->
+                </div>
+    </div>
+                        
+                  <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 	Designed by <a href="https://htmlcodex.com">HTML Codex</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li> 
+                     <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Help</a>
+                    </li>
+                </ul>
+            </div>
+          <style>
+  [data-custom-class='body'], [data-custom-class='body'] * {
+          background: transparent !important;
+        }
+[data-custom-class='title'], [data-custom-class='title'] * {
+          font-family: Arial !important;
+font-size: 26px !important;
+color: #000000 !important;
+        }
+[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
+          font-family: Arial !important;
+color: #595959 !important;
+font-size: 14px !important;
+        }
+[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
+          font-family: Arial !important;
+font-size: 19px !important;
+color: #000000 !important;
+        }
+[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
+          font-family: Arial !important;
+font-size: 17px !important;
+color: #000000 !important;
+        }
+[data-custom-class='body_text'], [data-custom-class='body_text'] * {
+          color: #595959 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+        }
+[data-custom-class='link'], [data-custom-class='link'] * {
+          color: #3030F1 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+word-break: break-word !important;
+        }
+</style>
+
+Disclaimer: In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the u use of this website. The designer and the developer are hereby not resposible for the content of this site and useage of the data provided. </div><style>
+      ul {
+        list-style-type: square;
+      }
+      ul > li > ul {
+        list-style-type: circle;
+      }
+      ul > li > ul > li > ul {
+        list-style-type: square;
+      }
+      ol li {
+        font-family: Arial ;
+      }
+    </style>
+      </div>
+      <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">
+      This disclaimer was created using Termly's <a style="color: rgb(48, 48, 241) !important;" href="https://termly.io/products/disclaimer-generator/">Disclaimer Generator</a>.
+      </div>
+        </div>
+    </div>
+    <input id="hid" type="hidden" value=<%=data._id %> >
+    </div></div>
+           </div><br><br><br>
+           <div class="content" id="content">
+            
+           </div>
+  </body>
+  </html>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+<script>
+    const el = e=>document.getElementById(e) 
+     
+     el('left').onclick = function(){
+         el('two').style.display = 'none'
+         el('one').style.display = 'block'
+     }
+     el('right').onclick = function(){
+         el('two').style.display = 'block'
+         el('one').style.display = 'none'
+     }
+</script>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

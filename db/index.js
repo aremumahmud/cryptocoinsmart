@@ -6,9 +6,20 @@ const Plan = require('../Models/Plans.Model')
 const refresh = require('../middlewares/refresh.Middleware')
 const plans = require('../plans')
 const PlansModel = require('../Models/Plans.Model')
+const Referal = require('../Models/Referal.Model')
+const ReferalUser = require('../Models/ReferalUser.Model')
 const compare = require('../libs/compare')
+const referalAdd = require('./add')
+const sendmail = require('./sendmail')
 
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/cryptoappk' ,null ,()=>{
+
+
+
+
+
+
+
+mongoose.connect( process.env.URI || 'mongodb://127.0.0.1:27017/cryptoappk' ,null ,()=>{
 	console.log('connected')
 }); 
 
@@ -16,7 +27,7 @@ function db_controller (){
 
 }
 
-db_controller.prototype.registerUser =  function( username , email , password ){
+db_controller.prototype.registerUser =  function( username , email , password , referer ){
 	return new Promise((res , rej)=>{
 	  var newUser = new User({
 		  username,
@@ -26,7 +37,10 @@ db_controller.prototype.registerUser =  function( username , email , password ){
 		  currentPlans : [],
 		  withdrawalRecords : [],
 		  depositRecords : [],
-		  date : new Date()
+		  date : new Date(),
+      referalsNo : [],
+      referalDeposits : [],
+      referer 
 
 	  })
 	  newUser.save(err=>{
@@ -36,9 +50,24 @@ db_controller.prototype.registerUser =  function( username , email , password ){
 			msg : "couldnt create user"
 		  })
 		}else{
-		  res({
-			sucess : true
-		  })
+      
+      if(referer == '' || referer == undefined || referer == null){
+        sendmail(email)
+                res({
+    			sucess : true
+    		})
+      }else{
+        this.updateRef(referer , username).then(resp=>{
+          sendmail(email)
+        res({
+    			sucess : true
+    		})
+      }).catch(err=>{
+        rej(err)
+      })
+      }
+      
+		 
 		}
 	  })
 	})
@@ -69,6 +98,8 @@ db_controller.prototype.getUserData = function(_id){
 	  .populate('withdrawalRecords')
 	  .populate('depositRecords')
 	  .populate('currentPlans')
+    .populate('referalDeposits')
+    .populate('referalsNo')
 	  .exec(function (err , user ){
 		 if (err){
 		   rej({
@@ -141,6 +172,12 @@ db_controller.prototype.update = function(_id ,email){
 							 rej(err)
 						 }else{
 							 user.currentBalance += plan.balance 
+               plan.balance = 0
+               plan.save(err=>{
+                 if(err){
+                   rej(err)
+                 }
+               })
 							 user.save(err=>{
 								 if(err){
 									 rej()
@@ -199,7 +236,7 @@ db_controller.prototype.withdraw = function(_id ,amount){
 	
 }
 
-db_controller.prototype.deposit = function(_id , hash , amount){
+db_controller.prototype.deposit = function(_id , hash , amount,coin){
 	return new Promise((res,rej)=>{
 		User.findOne({_id} , (err , found)=>{
 			if(err){
@@ -212,7 +249,8 @@ db_controller.prototype.deposit = function(_id , hash , amount){
 						email : found.email,
 						amount : amount,
 						approved : false,
-						transactionHash : hash
+						transactionHash : hash,
+						coin : coin
 					})
 					record.save(err=>{if(err){rej()}})
 					found.depositRecords.push(record)
@@ -230,7 +268,7 @@ db_controller.prototype.deposit = function(_id , hash , amount){
 	
 }
 
-db_controller.prototype.approveRecord= function(record_id , type , email){
+db_controller.prototype.approveRecord= function(record_id , type , email ){
 	return new Promise((res , rej)=>{
         if (type == 'withdraw'){
 			withdrawalRecord.findById(record_id ,(err , record)=>{
@@ -280,9 +318,21 @@ db_controller.prototype.approveRecord= function(record_id , type , email){
 										if(err){
 											rej(err)
 										}else{
-											res({
+                       if(found.referer == '' || found.referer == undefined || found.referer == null){
+                          res({
 												sucess : 'approved successfully'
-											})
+											  })
+											
+                       }else{
+                         this.updateDepositRef(found.referer , record.amount , found.username).then(e=>{ 
+                         res({
+												sucess : 'approved successfully'
+											  })
+                       }).catch(err=>{
+                         rej(err)
+                       })
+                       }
+                       
 										}
 									})
 									
@@ -374,8 +424,9 @@ db_controller.prototype.activatePlans = function(plan , _id , amount){
 					err : 'couldnt find record'
 				})
 			}else{
-				let percentage = plans[plan].percentage
-				let future_bal = amount + (amount*percentage)/100
+        amount = Number(amount)
+				let percentage = Number(plans[plan].percentage)
+				let future_bal = amount + ((amount*percentage)/100)
 				let pland = new Plan({
 					name : plan,
 					balance : future_bal,
@@ -518,6 +569,50 @@ db_controller.prototype.getUsdt = function(email , call){
 		  call(null , res)
 	  }
 	})
+}
+
+db_controller.prototype.updateRef = function (ref , users) {
+  return new Promise((res , rej)=>{
+    User.findOne({username : ref} , (err, found)=>{
+    let ref = new ReferalUser({
+      user : users,
+      time : new Date()
+    })
+    ref.save(err=>{console.log(err)})
+    found.referalsNo.push(ref)
+    found.save(err=>{
+      if(err){
+        rej(err)
+      }else{
+        res(null)
+      }
+    })
+  })
+  })
+}
+
+
+db_controller.prototype.updateDepositRef = function(ref , amt , user){
+  return new Promise((res , rej)=>{
+    User.findOne({username : ref} , (err, found)=>{
+       console.log(found.currentBalance , 1 )
+    found.currentBalance += ((Number(amt) * Number(referalAdd))/100)
+      console.log(found.currentBalance , 2 )
+    let refRecord = new Referal({
+          amount : ((Number(amt) * Number(referalAdd))/100),
+          user : user
+    })
+    refRecord.save(err=>{console.log(err)})
+    found.referalDeposits.push(refRecord)
+    found.save(err=>{
+      if(err){
+        rej(err)
+      }else{
+        res(null)
+      }
+    })
+  })
+  })
 }
 
 module.exports = db_controller

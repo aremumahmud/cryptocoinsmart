@@ -10,6 +10,7 @@ const plansController = require('./controls/plans.Controller')
 const registerController = require('./controls/register.Controller')
 const withdrawController = require('./controls/withdraw.Controller')
 const editController = require('./controls/edit.Controller')
+const referalController = require('./controls/referal.Controllers')
 
 
 // export them as a main object {}
@@ -26,5 +27,6 @@ module.exports = {
     plansController,
     registerController,
     withdrawController,
-    editController
+    editController,
+    referalController
 }

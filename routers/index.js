@@ -52,4 +52,13 @@ router
    .route('/approve')
    .get(controllers.approveController)
 
+router
+   .route('/withdraw/:id')
+   .post(Refresh , controllers.withdrawController)
+
+
+router
+   .route('/referals/:id')
+   .get(Refresh , controllers.referalController)
+
 module.exports = router

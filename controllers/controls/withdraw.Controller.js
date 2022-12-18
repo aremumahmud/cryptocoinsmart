@@ -9,6 +9,6 @@ module.exports = function(req , res){
     dbs.withdraw(id , amount ).then(resp=>{
         res.redirect('/pages/dashboard/' + id)
     }).catch(err=>{
-        res.render('insuff')
+        res.render('insuff',{data : id})
     })
 }

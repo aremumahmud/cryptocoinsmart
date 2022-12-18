@@ -23,6 +23,19 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="/css/style.css" rel="stylesheet">
+  <style>
+    .cent{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+      
+}
+
+    .goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }
+  </style>
 </head>
 
 <body>
@@ -31,7 +44,8 @@
         <div class="row py-2 px-lg-5">
             <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                 <div class="d-inline-flex align-items-center text-white">
-                    <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                    <small><i class="fa fa-phone-alt mr-2"></i>
+                      <a href='https://wa.me/+447464456003'>+44 7464 45 6003</a></small>
                     <small class="px-3">|</small>
                     <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
                 </div>
@@ -72,7 +86,8 @@
             <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
                 <div class="navbar-nav m-auto py-0">
                     <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href=<%='/about/' + data._id%> class="nav-item nav-link">About</a>
+                    <a href=<%='/about'%> class="nav-item nav-link">About</a>
+                  <div id="google_translate_element"></div>
                 </div>
                 <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Get A Quote</a>
             </div>
@@ -87,9 +102,10 @@
             <h1 class="text-primary mb-4">Safe & Faster</h1>
             <h1 class="text-white display-3 mb-5">Investment Services</h1>
             <div class="mx-auto" style="width: 100%; max-width: 600px;">
-                <div class="input-group">
-                    <div class="input-group-append">
-                        <button class="btn btn-primary px-3"><a href="/register"> Get Started</a></button>
+                <div class="input-group cent">
+                    <div class="cent">
+                        <button class="btn px-3"><a class='hn' href="/register"> Get Started</a></button> |
+                       <button class="btn  px-3"><a class='hn' href="/login"> Login</a></button>
                     </div>
                 </div>
             </div>
@@ -113,7 +129,7 @@
                     <p class="mb-4">We provide fast and quick Investment plans to choose from. We are trusted by thousands of investors and provide you with the fastest possible withrawals from your investment</p>
                     <div class="d-flex align-items-center pt-2">
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            data-src="https://www.youtube.com/embed/1YyAzVmP9xQ" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
@@ -125,7 +141,7 @@
                     <p class="mb-4">Our company puts your investments in the hands of many forex analysis experts, allowing you to make up to a fortune in profit margins , investment plans and so on </p>
                     <div class="d-flex align-items-center pt-2">
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            data-src="https://www.youtube.com/embed/NhFlqFVBmxc" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
@@ -137,7 +153,7 @@
                     <p class="mb-4">Our set of investment plans allow you to invest and make profit on high margin to ensure that you, our customers are satisfied </p>
                     <div class="d-flex align-items-center pt-2">
                         <button type="button" class="btn-play" data-toggle="modal"
-                            data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal">
+                            data-src="https://www.youtube.com/embed/esdCHrh40Sc" data-target="#videoModal">
                             <span></span>
                         </button>
                         <h5 class="font-weight-bold m-0 ml-4">Play Video</h5>
@@ -349,7 +365,10 @@
     </div>
     <!-- Pricing Plan End -->
 <!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="bitcoin" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
-
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="dogecoin" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="litecoin" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="ethereum" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
+<!-- Crypto Converter ⚡ Widget --><crypto-converter-widget shadow symbol live background-color="#383a59" border-radius="0.60rem" fiat="united-states-dollar" crypto="tether" amount="1" decimal-places="2"></crypto-converter-widget><a href="https://currencyrate.today/" target="_blank" rel="noopener">CurrencyRate.Today</a><script async src="https://cdn.jsdelivr.net/gh/dejurin/crypto-converter-widget@1.5.2/dist/latest.min.js"></script><!-- /Crypto Converter ⚡ Widget -->
     <!-- Team Start -->
     <div class="container-fluid pt-5">
         <div class="container">
@@ -571,13 +590,13 @@
                             <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-5">
+<!--                     <div class="col-md-6 mb-5">
                         <h3 class="text-primary mb-4">Quick Links</h3>
                         <div class="d-flex flex-column justify-content-start">
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
                             <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-lg-5 col-md-6 mb-5">
@@ -597,7 +616,7 @@
     <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: #3E3E4E !important;">
         <div class="row">
             <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
-                <p class="m-0 text-white">&copy; <a href="#">Your Site Name</a>. All Rights Reserved. 
+                <p class="m-0 text-white">&copy; <a href="#">CryptoCoinSmart</a>. All Rights Reserved. 
 				
 				<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
 				Designed by <a href="https://htmlcodex.com">HTML Codex</a>
@@ -618,6 +637,64 @@
                         <a class="nav-link text-white py-0" href="#">Help</a>
                     </li>
                 </ul>
+              <style>
+  [data-custom-class='body'], [data-custom-class='body'] * {
+          background: transparent !important;
+        }
+[data-custom-class='title'], [data-custom-class='title'] * {
+          font-family: Arial !important;
+font-size: 26px !important;
+color: #000000 !important;
+        }
+[data-custom-class='subtitle'], [data-custom-class='subtitle'] * {
+          font-family: Arial !important;
+color: #595959 !important;
+font-size: 14px !important;
+        }
+[data-custom-class='heading_1'], [data-custom-class='heading_1'] * {
+          font-family: Arial !important;
+font-size: 19px !important;
+color: #000000 !important;
+        }
+[data-custom-class='heading_2'], [data-custom-class='heading_2'] * {
+          font-family: Arial !important;
+font-size: 17px !important;
+color: #000000 !important;
+        }
+[data-custom-class='body_text'], [data-custom-class='body_text'] * {
+          color: #595959 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+        }
+[data-custom-class='link'], [data-custom-class='link'] * {
+          color: #3030F1 !important;
+font-size: 14px !important;
+font-family: Arial !important;
+word-break: break-word !important;
+        }
+</style>
+
+     
+    <p>Disclaimer: In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the u use of this website. The designer and the developer are hereby not resposible for the content of this site and useage of the data provided.</p>    
+ 
+      </div><style>
+      ul {
+        list-style-type: square;
+      }
+      ul > li > ul {
+        list-style-type: circle;
+      }
+      ul > li > ul > li > ul {
+        list-style-type: square;
+      }
+      ol li {
+        font-family: Arial ;
+      }
+    </style>
+      </div>
+      <div style="color: #595959;font-size: 14px;font-family: Arial;padding-top:16px;">
+      This disclaimer was created using Termly's <a style="color: rgb(48, 48, 241) !important;" href="https://termly.io/products/disclaimer-generator/">Disclaimer Generator</a>.
+      </div>
             </div>
         </div>
     </div>
@@ -642,6 +719,14 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+  
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>
